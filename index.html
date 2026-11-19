@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211610">
+  <meta name="description" content="Stop Pizza en Cali. Explora pizzas, lasañas, gratinados y bebidas. Arma tu pedido y envíalo por WhatsApp.">
+  <title>Stop Pizza | El antojo tiene parada</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="wood-grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Stop Pizza, inicio">
+      <span class="brand-mark">S<span>+</span></span>
+      <span class="brand-name">STOP <b>PIZZA</b><small>HECHO PARA COMPARTIR</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nuestra casa</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <div class="header-actions">
+      <a class="social-mini" href="https://www.instagram.com/stop_pizzeria?gwpx=MWI5MHphMXk5MzRnZA==" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+      <button class="cart-pill" id="openCartTop" type="button" aria-label="Abrir carrito">
+        <span class="cart-icon" aria-hidden="true">▣</span><span>Mi pedido</span><b id="cartCountTop">0</b>
+      </button>
+      <button class="mobile-menu" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-image" role="img" aria-label="Pizzas recién horneadas sobre una mesa de madera"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow"><i></i> PIZZERÍA · CALI, COLOMBIA</span>
+        <h1 id="heroTitle">El antojo<br>tiene <em>parada.</em></h1>
+        <p>Pizzas para compartir, sabores para recordar y ese gusto de volver por otra porción.</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="button button-primary">Explorar menú <span>↘</span></a>
+          <a href="#ubicacion" class="button button-ghost">Encuéntranos</a>
+        </div>
+      </div>
+      <div class="hero-stamp"><span>MASA</span><b>+</b><span>SABOR</span><b>+</b><span>BUENOS MOMENTOS</span></div>
+      <div class="hero-bottom-note"><span>01 / 04</span><span>DESLIZA PARA DESCUBRIR <b>↓</b></span></div>
+    </section>
+
+    <section class="intro-strip" id="nosotros">
+      <span class="strip-star">✳</span>
+      <p>Un menú para cada antojo. <b>Desde una porción hasta una familiar.</b></p>
+      <span class="strip-small">SABOR QUE REÚNE</span>
+    </section>
+
+    <section class="menu-section section-shell" id="menu">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow dark"><i></i> NUESTRO MENÚ</span>
+          <h2>¿Qué se te <em>antoja?</em></h2>
+          <p>Elige tus favoritos, agrégalos al carrito y arma tu pedido.</p>
+        </div>
+        <div class="menu-search-wrap">
+          <label class="sr-only" for="menuSearch">Buscar en el menú</label>
+          <span>⌕</span><input id="menuSearch" type="search" placeholder="Buscar un sabor…" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Filtrar menú">
+        <button class="filter-chip active" data-filter="all">Todo <span>48</span></button>
+        <button class="filter-chip" data-filter="Clasicas">Clásicas</button>
+        <button class="filter-chip" data-filter="Melos">Sabores Melos</button>
+        <button class="filter-chip" data-filter="Especiales">Especiales</button>
+        <button class="filter-chip" data-filter="Gratinados">Lasañas y gratinados</button>
+        <button class="filter-chip" data-filter="Bebidas">Bebidas</button>
+      </div>
+
+      <div class="menu-layout">
+        <div class="menu-results-head">
+          <span id="resultsLabel">TODOS LOS ANTOJOS</span>
+          <span class="results-rule"></span>
+          <span id="resultsCount">48 productos</span>
+        </div>
+        <div class="product-masonry" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>No encontramos ese producto. Prueba con otro nombre.</div>
+      </div>
+
+      <aside class="price-note">
+        <span class="note-icon">✳</span>
+        <div><b>El tamaño sí importa. Y aquí tú eliges.</b><p>En las pizzas puedes escoger la categoría y la presentación antes de añadirlas al carrito. Los jugos naturales aparecen sin precio porque el menú físico no lo especifica.</p></div>
+      </aside>
+    </section>
+
+    <section class="size-section">
+      <div class="size-photo"></div>
+      <div class="size-copy">
+        <span class="eyebrow"><i></i> TU PIZZA, TU TAMAÑO</span>
+        <h2>Pequeños antojos.<br><em>Grandes reuniones.</em></h2>
+        <p>Porción, media familiar, junior, mediana o familiar. Escoge el tamaño que mejor encaje con el momento.</p>
+        <a href="#menu" class="text-link">Ver tamaños y precios <span>↗</span></a>
+      </div>
+      <div class="size-index">02 <span>/</span> 04</div>
+    </section>
+
+    <section class="social-section section-shell">
+      <div class="social-card social-card-ig">
+        <span class="social-kicker">SÍGUENOS EN INSTAGRAM</span>
+        <div class="social-mark">◎</div>
+        <h3>El sabor también<br>se mira.</h3>
+        <p>Conoce nuestras novedades y comparte tus momentos Stop Pizza.</p>
+        <a href="https://www.instagram.com/stop_pizzeria?gwpx=MWI5MHphMXk5MzRnZA==" target="_blank" rel="noopener" class="button button-light">Instagram <span>↗</span></a>
+      </div>
+      <div class="social-card social-card-fb">
+        <span class="social-kicker">ENCUÉNTRANOS EN FACEBOOK</span>
+        <div class="social-mark">f</div>
+        <h3>Seguimos<br>en contacto.</h3>
+        <p>Visita nuestra página y mantente al día con Stop Pizza.</p>
+        <a href="https://www.facebook.com/share/14uT7ZCrUSw/" target="_blank" rel="noopener" class="button button-light">Facebook <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="location-section" id="ubicacion">
+      <div class="location-copy">
+        <span class="eyebrow dark"><i></i> AQUÍ ESTÁ NUESTRA PARADA</span>
+        <h2>Nos vemos<br><em>en Stop Pizza.</em></h2>
+        <a class="address-link" href="https://maps.app.goo.gl/gQ5aa71954fQAXUE8?g_st=ac" target="_blank" rel="noopener">Cra. 1B #58-03, Comuna 5<br>Cali, Valle del Cauca, Colombia <span>↗</span><small>Presiona para abrir la ficha, ubicación y reseñas en Google Maps.</small></a>
+        <div class="location-actions">
+          <a class="button button-dark" href="https://maps.app.goo.gl/gQ5aa71954fQAXUE8?g_st=ac" target="_blank" rel="noopener">Ver en Google Maps <span>↗</span></a>
+          <a class="review-link" href="https://search.google.com/local/writereview?placeid=ChIJW1WP7NOnMI4RKrXjAfh2iYI" target="_blank" rel="noopener">Dejar una reseña <span>★</span></a>
+        </div>
+      </div>
+      <div class="map-card">
+        <iframe title="Mapa de Stop Pizza en Cali" src="https://maps.google.com/maps?q=Stop%20Pizza%2C%20Cra.%201B%20%2358-03%2C%20Comuna%205%2C%20Cali%2C%20Colombia&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="map-open" href="https://maps.app.goo.gl/gQ5aa71954fQAXUE8?g_st=ac" target="_blank" rel="noopener">ABRIR EN GOOGLE MAPS ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark">S<span>+</span></span><span class="brand-name">STOP <b>PIZZA</b><small>HECHO PARA COMPARTIR</small></span></a>
+      <p>Una parada para compartir<br>algo delicioso.</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/stop_pizzeria?gwpx=MWI5MHphMXk5MzRnZA==" target="_blank" rel="noopener">Instagram ↗</a>
+        <a href="https://www.facebook.com/share/14uT7ZCrUSw/" target="_blank" rel="noopener">Facebook ↗</a>
+        <a href="https://maps.app.goo.gl/gQ5aa71954fQAXUE8?g_st=ac" target="_blank" rel="noopener">Google Maps ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> STOP PIZZA</span><span>HECHO CON GANAS DE COMPARTIR <b>♥</b></span><a href="#inicio">VOLVER ARRIBA ↑</a></div>
+  </footer>
+
+  <button class="floating-cart" id="floatingCart" type="button" aria-label="Abrir carrito">
+    <span class="floating-cart-icon">▣</span><span>Tu pedido</span><b id="cartCountFloat">0</b><strong id="cartTotalFloat">$0</strong>
+  </button>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Tu carrito" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow dark"><i></i> TU SELECCIÓN</span><h2>Tu carrito<span>.</span></h2></div><button class="icon-close" id="closeCart" aria-label="Cerrar carrito">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span>✳</span><h3>Tu carrito está esperando.</h3><p>Agrega una pizza, algo para acompañar o ese antojo extra.</p><button class="button button-dark" id="goMenu">Explorar menú</button></div>
+    <div class="cart-summary" id="cartSummary" hidden>
+      <div class="summary-line"><span>Subtotal cotizado</span><b id="cartSubtotal">$0</b></div>
+      <div class="summary-line muted"><span>Domicilio</span><span>Por confirmar</span></div>
+      <div class="summary-total"><span>Total parcial</span><b id="cartTotal">$0</b></div>
+      <p class="pending-note" id="pendingNote" hidden>Hay productos cuyo precio debe confirmarse por WhatsApp.</p>
+      <button class="button button-primary checkout-button" id="checkoutBtn">Continuar con el pedido <span>↗</span></button>
+      <button class="clear-cart" id="clearCart">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <div class="modal-wrap" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-close modal-x" data-close-modal aria-label="Cerrar">×</button>
+      <div class="modal-photo" id="modalPhoto"></div>
+      <div class="modal-content">
+        <span class="eyebrow dark" id="modalCategory"><i></i> PIZZA</span>
+        <h2 id="modalTitle">Producto</h2>
+        <p id="modalDescription"></p>
+        <div id="pizzaOptions" class="pizza-options" hidden>
+          <label for="pizzaSize">Presentación</label>
+          <select id="pizzaSize"></select>
+          <div class="category-choice" id="pizzaCategoryChoice"></div>
+        </div>
+        <div id="fixedPrice" class="fixed-price"></div>
+        <div class="modal-add-row"><div class="qty-control"><button id="modalQtyMinus" aria-label="Restar">−</button><span id="modalQty">1</span><button id="modalQtyPlus" aria-label="Sumar">+</button></div><button class="button button-primary" id="modalAdd">Agregar al carrito <span>+</span></button></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-wrap" id="checkoutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-checkout></div>
+    <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="icon-close modal-x" data-close-checkout aria-label="Cerrar">×</button>
+      <div class="checkout-top"><span class="eyebrow dark"><i></i> CASI LISTO</span><h2 id="checkoutTitle">Datos de tu <em>pedido.</em></h2><p>Completa los datos para preparar el mensaje de WhatsApp.</p></div>
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <label class="form-field">Nombre de quien recibe<input name="name" required maxlength="80" placeholder="Tu nombre"></label>
+          <label class="form-field">Celular de contacto<input name="phone" required inputmode="tel" maxlength="20" placeholder="300 000 0000"></label>
+          <fieldset class="delivery-field"><legend>¿Cómo recibes tu pedido?</legend><label><input type="radio" name="delivery" value="Domicilio" checked> <span> Domicilio</span></label><label><input type="radio" name="delivery" value="Recoger en el local"> <span> Recoger en el local</span></label></fieldset>
+          <label class="form-field address-field">Dirección de entrega<input name="address" id="deliveryAddress" maxlength="140" placeholder="Calle, carrera, número y apartamento"></label>
+          <label class="form-field address-field">Barrio<input name="neighborhood" id="deliveryNeighborhood" maxlength="80" placeholder="Tu barrio"></label>
+          <label class="form-field">Medio de pago<select name="payment"><option value="Efectivo">Efectivo</option><option value="Transferencia (confirmar disponibilidad)">Transferencia (confirmar disponibilidad)</option><option value="Acordar por WhatsApp">Acordar por WhatsApp</option></select></label>
+          <label class="form-field full-field">Indicaciones adicionales<textarea name="notes" rows="3" maxlength="300" placeholder="Casa, apartamento, punto de referencia, instrucciones…"></textarea></label>
+        </div>
+        <div class="checkout-disclaimer"><span>ⓘ</span><p>El costo del domicilio se confirma con el restaurante. Los jugos naturales no tienen precio publicado en el menú y se confirmarán antes de preparar el pedido.</p></div>
+        <div class="checkout-total"><span>Subtotal de productos con precio</span><b id="checkoutSubtotal">$0</b></div>
+        <div class="checkout-actions"><button type="button" class="button button-outline" id="copyOrder">Copiar mensaje</button><button type="submit" class="button button-primary" id="sendWhatsApp">Enviar por WhatsApp <span>↗</span></button></div>
+        <p class="config-warning" id="configWarning" hidden>Falta configurar el número de WhatsApp del restaurante en <code>config.js</code>. Puedes copiar el mensaje mientras tanto.</p>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

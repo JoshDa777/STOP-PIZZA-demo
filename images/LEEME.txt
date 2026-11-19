@@ -1,0 +1,1 @@
+Guarda aquí las fotografías propias de Stop Pizza. Luego asigna sus rutas en config.js, dentro de productImages o heroImage. Ejemplo: "hawaiiana": "images/hawaiana.jpg".
