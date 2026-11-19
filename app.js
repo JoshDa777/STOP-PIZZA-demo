@@ -4,7 +4,7 @@
   const money = value => new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(value);
   const pizzaSizes = [
     { id: 'porcion', label: 'Porción', portions: '1 porción', prices: { Clasicas: 10000, Melos: 12000, Especiales: 15000 } },
-    { id: 'media', label: 'Maxi Familiar', detail: '4 porciones', portions: '4 porciones', prices: { Clasicas: 17000, Melos: 18000, Especiales: 20000 } },
+    { id: 'media', label: 'Maxi Personal', detail: '4 porciones', portions: '4 porciones', prices: { Clasicas: 17000, Melos: 18000, Especiales: 20000 } },
     { id: 'junior', label: 'Junior', detail: '6 porciones', portions: '6 porciones', prices: { Clasicas: 22000, Melos: 24000, Especiales: 27000 } },
     { id: 'mediana', label: 'Mediana', detail: '8 porciones', portions: '8 porciones', prices: { Clasicas: 36000, Melos: 39000, Especiales: 50000 } },
     { id: 'familiar', label: 'Familiar', detail: '12 porciones', portions: '12 porciones', prices: { Clasicas: 58000, Melos: 65000, Especiales: 75000 } }
