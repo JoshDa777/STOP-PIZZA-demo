@@ -289,9 +289,9 @@
       ...lines,
       '',
       `Subtotal de productos con precio: ${money(subtotal())}`,
-      `Domicilio: ${delivery === 'Domicilio' ? 'Por confirmar' : 'No aplica · recoger en el local'}`,
+      `Domicilio: ${delivery === 'Domicilio' ? '$3.000' : 'No aplica · recoger en el local'}`,
       ...(pending ? ['Productos con precio pendiente: confirmar por WhatsApp'] : []),
-      `Total parcial${pending ? ' (sin productos pendientes)' : ''}: ${money(subtotal())}${delivery === 'Domicilio' ? ' + domicilio por confirmar' : ''}`,
+      `Total parcial${pending ? ' (sin productos pendientes)' : ''}: ${money(subtotal())}${delivery === 'Domicilio' ? ' + $3.000' : ''}`,
       '',
       '*DATOS DE ENTREGA*',
       `Recibe: ${formData.get('name')}`,
@@ -300,7 +300,7 @@
       `Medio de pago: ${formData.get('payment')}`,
       `Indicaciones: ${formData.get('notes') || 'Sin indicaciones adicionales'}`,
       '',
-      'Por favor, confirmen disponibilidad, valor del domicilio y tiempo estimado. ¡Gracias!'
+      'Por favor, confirmen disponibilidad y tiempo estimado. ¡Gracias!'
     ];
     return linesOut.join('\n');
   }
