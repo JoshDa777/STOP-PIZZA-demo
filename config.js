@@ -2,6 +2,7 @@
   CONFIGURACIÓN DE STOP PIZZA
   Puedes editar este archivo con Bloc de notas, VS Code o cualquier editor.
 
+
   WHATSAPP:
   Escribe el número completo con indicativo de país, solo dígitos.
   Colombia: 57 + número celular. Ejemplo ficticio: 573001234567
