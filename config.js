@@ -24,7 +24,7 @@ window.STOP_PIZZA_CONFIG = {
 
   // Cambia cada producto por separado. Deja "" para usar la imagen por defecto.
   productImages: {
-    "hawaiiana": "",
+    "hawaiiana": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkb4YlqF18dc-YYXn7uDNBMOEv8H90uUUycCWRglGFjzzxXq1-fkfJ3hh3&s=10",
     "pollo-champinones": "",
     "jamon-queso": "",
     "kabanos": "",
